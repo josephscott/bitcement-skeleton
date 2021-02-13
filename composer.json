@@ -1,0 +1,12 @@
+{
+	"name": "josephscott/bitcement-skeleton",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"php": "^7.2",
+		"josephscott/bitcement": "0.0.6"
+	},
+	"config": {
+		"optimize-autoloader": true
+	}
+}
