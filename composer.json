@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"require": {
 		"php": "^7.2",
-		"josephscott/bitcement": "0.0.6"
+		"josephscott/bitcement": "*"
 	},
 	"config": {
 		"optimize-autoloader": true
