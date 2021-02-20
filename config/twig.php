@@ -7,12 +7,20 @@ if ( !defined( 'APP_TWIG_AUTO_RELOAD' ) ) {
 	define( 'APP_TWIG_AUTO_RELOAD', true );
 }
 
+if ( !defined( 'APP_TWIG_CACHE_DIR' ) ) {
+	if ( is_writable( APP_DIR . '/cache/twig' ) ) {
+		define( 'APP_TWIG_CACHE_DIR', APP_DIR . '/cache/twig' );
+	} else {
+		define( 'APP_TWIG_CACHE_DIR', false );
+	}
+}
+
 $app->inject(
 	'twig',
 	new \Twig\Environment(
 		new \Twig\Loader\FilesystemLoader( APP_DIR . '/templates' ),
 		[
-			'cache' => APP_DIR . '/cache/twig',
+			'cache' => APP_TWIG_CACHE_DIR,
 			'auto_reload' => APP_TWIG_AUTO_RELOAD
 		]
 	)
